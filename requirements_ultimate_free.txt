@@ -1,0 +1,42 @@
+# Blue Ultimate Free JARVIS - free-first dependencies
+# Core
+requests
+numpy
+pandas
+scikit-learn
+joblib
+
+# Voice input
+faster-whisper
+sounddevice
+scipy
+
+# Voice output
+edge-tts
+playsound==1.2.2
+pyttsx3
+
+# Wake word optional/free
+openwakeword
+
+# PC control + vision
+pyautogui
+pytesseract
+pillow
+opencv-python
+
+# Memory
+chromadb
+faiss-cpu
+
+# UI
+customtkinter
+streamlit
+psutil
+
+# Optional heavy/free local systems - install only if your PC supports them:
+# nemo_toolkit[asr]     # NVIDIA Parakeet / NeMo ASR support
+# TTS                  # XTTS-v2 support; may need extra setup
+# ultralytics          # YOLO vision support
+# PyQt6                # advanced HUD later
+# electron is not a Python package; use Node.js if building Electron UI later.

@@ -4551,8 +4551,22 @@ JARVIS_NATURAL_ALIASES = {
 }
 
 def ji_natural_rewrite(command: str) -> str:
-    """Turns rough Hinglish/spelling-mistake commands into Blue-readable commands."""
-    clean = correct_command_text(command) if "correct_command_text" in globals() else normalize_text(command)
+    """Turns rough Hinglish/spelling-mistake commands into Blue-readable commands.
+
+    IMPORTANT FIX:
+    Do not call correct_command_text() from here, because correct_command_text()
+    is later patched to call ji_natural_rewrite(). Calling it here creates
+    infinite recursion and causes: maximum recursion depth exceeded.
+    """
+    try:
+        # Use the original pre-JARVIS correction function if it was captured.
+        base_corrector = globals().get("_ji_previous_correct_command_text")
+        if base_corrector and base_corrector is not ji_natural_rewrite:
+            clean = base_corrector(command)
+        else:
+            clean = command
+    except Exception:
+        clean = command
     clean = normalize_text(clean)
     if clean in LEARNED_COMMANDS:
         return LEARNED_COMMANDS[clean]

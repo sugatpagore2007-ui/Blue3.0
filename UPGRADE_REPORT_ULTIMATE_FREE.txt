@@ -1,0 +1,19 @@
+BLUE ULTIMATE FREE JARVIS UPGRADE REPORT
+
+Compile test target:
+- blue_next modular core
+- legacy files preserved separately
+
+Added:
+1. Free-first STT routing: Parakeet adapter, Faster Whisper fallback, typed fallback.
+2. Free-first TTS routing: Edge TTS, XTTS-v2 placeholder, pyttsx3 fallback.
+3. Local AI brain: Ollama llama3.1:8b primary + Mistral fast model.
+4. Paid systems disabled by default: Deepgram and GPT-4o are optional only.
+5. Wake system: OpenWakeWord-ready with always-listen fallback.
+6. Vision: OCR + OpenCV, YOLO/OmniParser lazy placeholders.
+7. Memory: SQLite + ChromaDB wrapper + FAISS dependency option.
+8. UI: Existing HUD preserved, PyQt6/Electron noted for later heavy UI.
+9. ML/neural learning: command teaching, correction, vector memory, event logs.
+10. Internet learning: trusted-source-only safe learning; no blind background scraping.
+11. Safety: destructive commands, secrets, and risky actions are guarded.
+12. Low-lag design: lazy imports, adapters, fallbacks, modular execution.

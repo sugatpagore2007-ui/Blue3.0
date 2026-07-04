@@ -127,3 +127,7 @@ Safety remains active:
 - Risky actions ask confirmation.
 - Dangerous terminal commands are blocked.
 - Passwords, OTP, PIN, CVV, API keys, and private keys are blocked.
+
+
+## Recursion Fix Note
+If you see `maximum recursion depth exceeded`, use this fixed build. The old natural-command wrapper called itself through `correct_command_text`; that has been repaired. Prefer running `python run_ultimate_blue.py` or `START_BLUE_ULTIMATE_FREE.bat`.
